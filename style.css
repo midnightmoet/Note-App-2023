@@ -63,11 +63,8 @@ body {
     margin: 10px;
 }
 
-.saveBtn,
-.deleteBtn,
-.addBtn,
-.editBtn {
-    width: 20vw;
+.btn {
+    width: 10vw;
     max-width: 250px;
     /* border: 1px solid #000; */
     border-radius: 5px;
@@ -81,7 +78,7 @@ body {
     cursor: pointer;
 }
 
-button:hover {
+.btn:hover {
     background: var(--primary-hover);
     color: var(--primary-light);
 }
