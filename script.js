@@ -6,15 +6,13 @@ getNotes().forEach((note) => {
   appEl.insertBefore(noteEl, btnEl);
 });
 
-
-// CREATE NOTE
 function createNoteEl(id, content) {
   const element = document.createElement("textarea");
   element.classList.add("note");
   element.placeholder = "Empty Note";
   element.value = content;
 
-  element.addEventListener("doubleClick", () => {
+  element.addEventListener("dblclick", () => {
     const warning = confirm("Are you sure you want to delete this note?");
     if (warning) {
       deleteNote(id, element);
@@ -28,16 +26,12 @@ function createNoteEl(id, content) {
   return element;
 }
 
-
-// DELETE NOTE
 function deleteNote(id, element) {
     const notes = getNotes().filter((note)=>note.id != id)
     saveNote(notes)
     appEl.removeChild(element)
 }
 
-
-// UPDATE NOTE
 function updateNote(id, content) {
   const notes = getNotes();
   const target = notes.filter((note) => note.id == id)[0];
@@ -45,8 +39,6 @@ function updateNote(id, content) {
   saveNote(notes);
 }
 
-
-// ADD NOTE
 function addNote() {
   const notes = getNotes();
   const noteObj = {
@@ -61,17 +53,12 @@ function addNote() {
   saveNote(notes);
 }
 
-
-// SAVE NOTE
 function saveNote(notes) {
   localStorage.setItem("note-app", JSON.stringify(notes));
 }
 
-
-// GET NOTE
 function getNotes() {
   return JSON.parse(localStorage.getItem("note-app") || "[]");
 }
 
-// EVENT LISTENER
-btnEl.addEventListener("click", addNote)
+btnEl.addEventListener("click", addNote);
