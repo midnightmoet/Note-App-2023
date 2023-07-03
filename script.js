@@ -1,7 +1,20 @@
-const appEl = document.getElementById('app');
-const noteEl = document.getElementById('note');
-const textareaEl = document.getElementById('textarea');
-const saveBtnEl = document.getElementById('saveBtn');
-const deleteBtnEl = document.getElementById('deleteBtn');
-const addBtnEl = document.getElementById('addBtn');
-const editBtnEl = document.getElementById('editBtn');
+const btnEl = document.getElementById("btn");
+
+function createNoteEl(id, content){
+
+}
+
+function addNote(){
+    // console.log("add note"); // test
+    const noteObj = {
+        id: Math.floor(Math.random() * 100000),
+        content: ""
+    };
+
+    // console.log(noteObj); // test
+
+    const noteEl = createNoteEl(noteObj.id, noteObj.content)
+}
+
+
+btnEl.addEventListener("click", addNote);
